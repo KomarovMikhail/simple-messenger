@@ -6,7 +6,7 @@ import time
 from auth_server.jwt_utils.users_db_handler import UsersDbHandler
 from auth_server.const.error_messages import *
 from auth_server.const.http_codes import *
-from auth_server.const.const import APPLICATION_JSON_CONTENT_TYPE, JSON_KEY_ACCESS_TOKEN, JSON_KEY_REFRESH_TOKEN, \
+from auth_server.const.const import HEADER_VALUE_APPLICATION_JSON, JSON_KEY_ACCESS_TOKEN, JSON_KEY_REFRESH_TOKEN, \
     JWT_KEY_ISS, JWT_KEY_AUD, JWT_KEY_IAT, JWT_KEY_EXP, JWT_KEY_USER_ID, JWT_ISSUER, JWT_AUDIENCE, \
     ACCESS_TOKEN_LIFETIME, REFRESH_TOKEN_LIFETIME, SERVER_SECRET_KEY, JWT_ALGORITHM
 
@@ -76,7 +76,7 @@ class JwtHandler:
         return Response(
             status=RESPONSE_CODE_OK,
             response=json.dumps({JSON_KEY_ACCESS_TOKEN: access_token, JSON_KEY_REFRESH_TOKEN: refresh_token}),
-            content_type=APPLICATION_JSON_CONTENT_TYPE)
+            content_type=HEADER_VALUE_APPLICATION_JSON)
 
     @staticmethod
     def refresh_tokens(refresh_token, fingerprint):
@@ -94,7 +94,7 @@ class JwtHandler:
         return Response(
             status=RESPONSE_CODE_OK,
             response=json.dumps({JSON_KEY_ACCESS_TOKEN: access_token, JSON_KEY_REFRESH_TOKEN: refresh_token}),
-            content_type=APPLICATION_JSON_CONTENT_TYPE)
+            content_type=HEADER_VALUE_APPLICATION_JSON)
 
     @staticmethod
     def logout(login, fingerprint):

@@ -13,8 +13,7 @@ def login_controller():
     request_body = request.json
     if JSON_KEY_LOGIN not in request_body or JSON_KEY_PASSWORD not in request_body or \
             JSON_KEY_FINGERPRINT not in request_body:
-        response = Response(status=RESPONSE_CODE_BAD_REQUEST, response=ERROR_MESSAGE_INVALID_REQUEST_BODY)
-        return response
+        return Response(status=RESPONSE_CODE_BAD_REQUEST, response=ERROR_MESSAGE_INVALID_REQUEST_BODY)
 
     login = request_body[JSON_KEY_LOGIN]
     password = request_body[JSON_KEY_PASSWORD]

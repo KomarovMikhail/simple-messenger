@@ -3,6 +3,7 @@ import uuid
 from auth_server.const.const import MESSENGER_USER_DB_NAME, MESSENGER_USER_DB_USER, MESSENGER_USER_DB_PASSWORD, \
     MESSENGER_USER_DB_HOST, MESSENGER_USER_DB_PORT
 from auth_server.const.queries import *
+from auth_server.db_utils.logging_cursor import LoggingCursor
 
 
 class UsersDbHandler:
@@ -26,7 +27,7 @@ class UsersDbHandler:
 
         try:
             with connection:
-                with connection.cursor() as cursor:
+                with connection.cursor(cursor_factory=LoggingCursor) as cursor:
                     cursor.execute(USER_DATA_SELECT_USER_ID.format(login=login))
                     response = cursor.fetchall()
 
@@ -45,7 +46,7 @@ class UsersDbHandler:
 
         try:
             with connection:
-                with connection.cursor() as cursor:
+                with connection.cursor(cursor_factory=LoggingCursor) as cursor:
                     cursor.execute(USER_DATA_SELECT_USER_ID.format(login=login))
                     response = cursor.fetchall()
 
@@ -67,7 +68,7 @@ class UsersDbHandler:
 
         try:
             with connection:
-                with connection.cursor() as cursor:
+                with connection.cursor(cursor_factory=LoggingCursor) as cursor:
                     cursor.execute(USER_DATA_SELECT_USER_DATA.format(login=login))
                     response = cursor.fetchall()
 
@@ -87,7 +88,7 @@ class UsersDbHandler:
 
         try:
             with connection:
-                with connection.cursor() as cursor:
+                with connection.cursor(cursor_factory=LoggingCursor) as cursor:
                     cursor.execute(REFRESH_TOKEN_DATA_SELECT_REFRESH_SESSION_ID.format(
                         user_id=user_id,
                         fingerprint=fingerprint))
@@ -120,7 +121,7 @@ class UsersDbHandler:
 
         try:
             with connection:
-                with connection.cursor() as cursor:
+                with connection.cursor(cursor_factory=LoggingCursor) as cursor:
                     cursor.execute(REFRESH_TOKEN_DATA_SELECT_REFRESH_SESSION_DATA.format(
                         refresh_token=refresh_token,
                         fingerprint=fingerprint))
@@ -150,7 +151,7 @@ class UsersDbHandler:
 
         try:
             with connection:
-                with connection.cursor() as cursor:
+                with connection.cursor(cursor_factory=LoggingCursor) as cursor:
                     cursor.execute(USER_DATA_SELECT_USER_ID.format(login=login))
                     response = cursor.fetchall()
 

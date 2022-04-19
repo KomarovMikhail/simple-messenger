@@ -17,3 +17,4 @@ REFRESH_TOKEN_DATA_SELECT_REFRESH_SESSION_DATA = \
 REFRESH_TOKEN_DATA_DELETE_REFRESH_SESSION = "DELETE FROM refresh_token_data WHERE id = '{id}';"
 REFRESH_TOKEN_DATA_DELETE_USER_REFRESH_SESSION = "DELETE FROM refresh_token_data " \
                                                  "WHERE user_id = '{user_id}' AND fingerprint = '{fingerprint}';"
+LISTEN_USER_DELETED = "LISTEN user_deleted"

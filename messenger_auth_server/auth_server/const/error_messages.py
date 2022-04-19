@@ -6,4 +6,8 @@ ERROR_MESSAGE_WRONG_PASSWORD = 'Cannot login. Wrong password'
 ERROR_MESSAGE_REFRESH_SESSION_NOT_EXISTS = 'Cannot refresh tokens. Refresh session not exists'
 ERROR_MESSAGE_REFRESH_TOKEN_EXPIRED = 'Cannot refresh tokens. Refresh token expired'
 ERROR_MESSAGE_DELETE_REFRESH_SESSION = 'Cannot delete refresh session. No such user'
+ERROR_MESSAGE_NO_LOG_TYPE = 'Log type not specified'
+ERROR_MESSAGE_WRONG_LOG_TYPE = 'Log type not exists'
+ERROR_MESSAGE_WEBHOOK_ALREADY_EXISTS = "Webhook already exists"
+ERROR_MESSAGE_WEBHOOK_NOT_EXISTS = "Webhook not exists"
 
