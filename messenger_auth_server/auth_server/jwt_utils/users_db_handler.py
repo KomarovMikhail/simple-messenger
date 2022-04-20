@@ -44,6 +44,7 @@ class UsersDbHandler:
         result = False
         connection = UsersDbHandler._get_connection()
 
+        user_id = ''
         try:
             with connection:
                 with connection.cursor(cursor_factory=LoggingCursor) as cursor:
@@ -57,7 +58,7 @@ class UsersDbHandler:
         finally:
             connection.close()
 
-        return result
+        return result, user_id
 
     @staticmethod
     def get_user_data(login):

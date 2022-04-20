@@ -48,8 +48,8 @@ HEADER_VALUE_APPLICATION_JSON = 'application/json'
 MESSENGER_USER_DB_NAME = 'messenger-users-db'
 MESSENGER_USER_DB_USER = 'postgres'
 MESSENGER_USER_DB_PASSWORD = '0000'
-# MESSENGER_USER_DB_HOST = 'messenger-users-db-container'
-MESSENGER_USER_DB_HOST = 'localhost'
+MESSENGER_USER_DB_HOST = 'messenger-users-db-container'
+# MESSENGER_USER_DB_HOST = 'localhost'
 MESSENGER_USER_DB_PORT = 5432
 
 MESSENGER_WORKDIR = os.path.expanduser('~') + '/messenger-auth-server-workdir'

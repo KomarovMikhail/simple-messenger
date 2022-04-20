@@ -9,6 +9,7 @@ from auth_server.const.http_codes import *
 from auth_server.const.const import HEADER_VALUE_APPLICATION_JSON, JSON_KEY_ACCESS_TOKEN, JSON_KEY_REFRESH_TOKEN, \
     JWT_KEY_ISS, JWT_KEY_AUD, JWT_KEY_IAT, JWT_KEY_EXP, JWT_KEY_USER_ID, JWT_ISSUER, JWT_AUDIENCE, \
     ACCESS_TOKEN_LIFETIME, REFRESH_TOKEN_LIFETIME, SERVER_SECRET_KEY, JWT_ALGORITHM
+from auth_server.webhook_utils.user_deleted_webhook_handler import UserDeletedWebhookHandler
 
 from flask import Response
 
@@ -51,12 +52,14 @@ class JwtHandler:
 
     @staticmethod
     def delete_user(login):
-        success_flag = UsersDbHandler.delete_user(login)
+        success_flag,  user_id = UsersDbHandler.delete_user(login)
 
         if not success_flag:
             return Response(
                 status=RESPONSE_CODE_INTERNAL_SERVER_ERROR,
                 response=ERROR_MESSAGE_USER_NOT_EXISTS_ON_DELETE)
+
+        UserDeletedWebhookHandler().notify(user_id)
 
         return Response(status=RESPONSE_CODE_OK)
 

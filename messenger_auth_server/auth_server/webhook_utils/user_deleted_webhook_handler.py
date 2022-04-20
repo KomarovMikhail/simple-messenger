@@ -1,6 +1,7 @@
 from auth_server.common_utils.singleton_metaclass import SingletonMetaclass
-from auth_server.const.const import WEBHOOKS_PATH, USER_DELETED_WEBHOOKS_FILE_NAME
+from auth_server.const.const import WEBHOOKS_PATH, USER_DELETED_WEBHOOKS_FILE_NAME, JSON_KEY_USER_ID
 import os
+import requests
 from filelock import FileLock
 
 
@@ -46,3 +47,11 @@ class UserDeletedWebhookHandler(metaclass=SingletonMetaclass):
                 file.writelines(webhooks)
 
         return True
+
+    def notify(self, user_id):
+        file_lock = FileLock(self._lockfile_path)
+        with file_lock.acquire():
+            with open(self._file_path, 'r') as file:
+                for url in file.readlines():
+                    pure_url = url[:-1]
+                    requests.post(pure_url, data={JSON_KEY_USER_ID: user_id})

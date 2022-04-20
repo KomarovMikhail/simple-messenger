@@ -15,9 +15,6 @@ from auth_server.controllers import remove_user_deleted_webhook_controller
 # loggers
 from auth_server.logging_utils.loggers import db_logger
 
-from auth_server.background_jobs.delete_user_listener import run_user_deleted_listener
-
 
 if __name__ == '__main__':
-    run_user_deleted_listener()
     app.run(host=SERVER_HOST, port=SERVER_PORT)
