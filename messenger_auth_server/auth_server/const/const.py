@@ -1,6 +1,3 @@
-import os
-
-
 SERVER_HOST = '0.0.0.0'
 SERVER_PORT = 5433
 
@@ -52,7 +49,7 @@ MESSENGER_USER_DB_HOST = 'messenger-users-db-container'
 # MESSENGER_USER_DB_HOST = 'localhost'
 MESSENGER_USER_DB_PORT = 5432
 
-MESSENGER_WORKDIR = os.path.expanduser('~') + '/messenger-auth-server-workdir'
+MESSENGER_WORKDIR = 'messenger-auth-server-workdir'
 
 LOGS_PATH = MESSENGER_WORKDIR + '/logs'
 LOGGER_KEY_DB = 'logs-db'
