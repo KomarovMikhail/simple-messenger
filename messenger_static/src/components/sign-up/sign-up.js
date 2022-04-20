@@ -12,7 +12,7 @@ const SignUpComponent = () => {
     const [repeatPassword, setRepeatPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
     const onLoginSuccess = () => {
         navigate(urlSignIn, { replace: true });

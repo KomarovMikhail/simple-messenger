@@ -15,7 +15,7 @@ const SignInComponent = () => {
     const [errorMessage, setErrorMessage] = useState('');
 
     // const accessToken = useSelector((state) => state.accessToken)
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const dispatch = useDispatch()
 
     const onLoginSuccess = (data) => {

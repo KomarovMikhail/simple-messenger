@@ -15,8 +15,8 @@ const App = () => {
           <BrowserRouter>
             <Routes>
               <Route exact path={ urlRoot } element={ <Navigate to={ urlSignIn } replace /> } />
-              <Route path={ urlSignIn } element={ <SignInComponent /> } />
-              <Route path={ urlSignUp } element={ <SignUpComponent /> } />
+              <Route exact path={ urlSignIn } element={ <SignInComponent /> } />
+              <Route exact path={ urlSignUp } element={ <SignUpComponent /> } />
             </Routes>
           </BrowserRouter>
         </div>
