@@ -1,0 +1,118 @@
+@import url("../../styles/theme.css");
+
+
+#app-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#app-secondary-background {
+    position: relative;
+    width: 1000px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--secondary-background-color);
+}
+
+#app-header {
+    padding: 24px;
+    color: var(--main-theme-color);
+    font-size: 24px;
+}
+
+#app-header-separator {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    clear: both;
+    background-color: var(--background-color);
+}
+
+/* === common === */
+
+.center-block {
+    margin-top: 40px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    text-align:center;
+}
+
+.input-title {
+    font-size: 15px;
+    left: 0;
+    border: var(--text-color);
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-field {
+    font-size: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--main-font);
+    position: relative;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 8px;
+    box-sizing: border-box;
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+}
+
+.input-field:focus {
+    border: 1px solid var(--main-theme-color);
+}
+
+.password-input {
+    -webkit-text-security: circle;
+}
+
+.colored-button {
+    padding: 10px;
+    background-color: var(--main-theme-color);
+    width: 100px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 4px;
+}
+
+.colored-button:hover {
+    cursor: pointer;
+    background-color: var(--main-theme-color-hover);
+}
+
+.colored-button:active {
+    cursor: pointer;
+    background-color: var(--main-theme-color-pressed);
+}
+
+.redirect-link {
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.redirect-link:hover {
+    cursor: pointer;
+    color: var(--main-theme-color);
+}
+
+.redirect-message {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.error-message {
+    color: var(--error-color);
+}

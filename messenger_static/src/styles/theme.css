@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "source-code-pro";
+    src: url("../../fonts/SourceCodePro-Regular.ttf") format("opentype");
+}
+
+:root {
+    --background-color: #1b1b1c;
+    --secondary-background-color: #28282b;
+    --main-theme-color: #209cfa;
+    --main-theme-color-hover: #38a9ff;
+    --main-theme-color-pressed: #2f91de;
+    --text-color: #e8e8e8;
+    --main-font: "source-code-pro";
+    --error-color:  #ee3322
+}

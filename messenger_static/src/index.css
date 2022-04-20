@@ -1,0 +1,25 @@
+@import url("styles/theme.css");
+
+html, body {
+  height: 100%
+}
+
+body {
+  display: flex;
+  align-items: stretch;
+  font-family: var(--main-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: var(--main-font);
+}
+
+#root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
